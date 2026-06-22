@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collection — Akhavan Collection</title>
+  <link rel="icon" href="assets/favicon/white.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="assets/favicon/black.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header solid" id="header">
+    <div class="header__left">
+      <button class="hamburger" id="menuOpen" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <a class="header__logo" href="index.html" aria-label="Collection Akhavan">
+      <img src="assets/logo/wordmark.svg" alt="Collection Akhavan" />
+    </a>
+    <div class="header__right">
+      <div class="lang-toggle">
+        <button data-lang="de">DE</button>
+        <span class="sep">/</span>
+        <button data-lang="en" class="active">EN</button>
+      </div>
+      <div class="mode-wrap">
+        <span class="mode-icon" id="modeIcon"></span>
+        <button class="mode-capsule" id="modeCapsule" aria-label="Toggle day / night mode"></button>
+      </div>
+      <button class="nav-reserve" data-reserve>Reserve a Visit</button>
+    </div>
+  </header>
+
+  <!-- ===== SIDE MENU ===== -->
+  <nav class="menu-panel" id="menuPanel" aria-label="Site navigation">
+    <div class="menu-panel__head">
+      <a class="menu-panel__logo" href="index.html">
+        <img src="assets/logo/wordmark.svg" alt="Collection Akhavan" />
+      </a>
+      <button class="icon-btn" id="menuClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="20" height="20"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <nav class="menu-nav">
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="location.html">Location</a>
+      <a href="about.html">About Us</a>
+    </nav>
+    <div class="menu-panel__foot">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="imprint.html">Imprint</a>
+    </div>
+  </nav>
+
+  <!-- ===== RESERVE PANEL ===== -->
+  <aside class="reserve-panel" id="reservePanel" aria-label="Reserve a Visit">
+    <div class="reserve-panel__head">
+      <span class="reserve-panel__title">Reserve a Visit</span>
+      <button class="icon-btn" id="reserveClose" aria-label="Close panel">
+        <svg viewBox="0 0 24 24" width="20" height="20"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <div class="reserve-panel__body">
+      <p class="reserve-panel__intro">
+        Visits to Collection Akhavan are by appointment. Select a date and time below — we look forward to welcoming you.
+      </p>
+      <div class="calendly-wrap">
+        <div class="cly-dark calendly-inline-widget" data-url="https://calendly.com/designography96/visit-akhavan-collection?background_color=050200&text_color=f4f4f4&primary_color=fe751f" style="min-width:320px;height:700px;"></div>
+        <div class="cly-light calendly-inline-widget" data-url="https://calendly.com/designography96/visit-akhavan-collection?background_color=f4f4f4&text_color=050200&primary_color=050200" style="min-width:320px;height:700px;"></div>
+      </div>
+    </div>
+  </aside>
+
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- COLLECTION COVER -->
+    <section class="coll-cover">
+      <img src="assets/images/collection/collectioncover.jpg" alt="Collection Akhavan interior" />
+      <div class="coll-cover__caption">
+        <p class="coll-cover__label">Permanent Collection</p>
+        <h1 class="coll-cover__title">The Collection</h1>
+      </div>
+    </section>
+
+    <section class="collection-grid">
+
+      <div class="collection-item reveal">
+        <img src="assets/images/collection/artwork-01-street-scene.png" alt="Street Scene" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">Street Scene</span>
+          <span class="collection-item__sub">Mixed media, 2024</span>
+        </div>
+      </div>
+
+      <div class="collection-item reveal reveal-delay-1">
+        <img src="assets/images/collection/col-09.png" alt="Untitled IX" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">Untitled IX</span>
+          <span class="collection-item__sub">2024</span>
+        </div>
+      </div>
+
+      <div class="collection-item reveal reveal-delay-2">
+        <img src="assets/images/collection/col-04.png" alt="Untitled IV" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">Untitled IV</span>
+          <span class="collection-item__sub">2024</span>
+        </div>
+      </div>
+
+      <div class="collection-item reveal">
+        <img src="assets/images/collection/col-03.png" alt="Untitled III" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">Untitled III</span>
+          <span class="collection-item__sub">2024</span>
+        </div>
+      </div>
+
+      <div class="collection-item reveal reveal-delay-1">
+        <img src="assets/images/collection/artwork-02-valie-export.png" alt="VALIE EXPORT" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">VALIE EXPORT</span>
+          <span class="collection-item__sub">Photography, 2023</span>
+        </div>
+      </div>
+
+      <div class="collection-item reveal reveal-delay-2">
+        <img src="assets/images/collection/col-05.png" alt="Untitled V" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">Untitled V</span>
+          <span class="collection-item__sub">2024</span>
+        </div>
+      </div>
+
+      <div class="collection-item reveal">
+        <img src="assets/images/collection/col-08.png" alt="Untitled VIII" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">Untitled VIII</span>
+          <span class="collection-item__sub">2024</span>
+        </div>
+      </div>
+
+      <div class="collection-item reveal reveal-delay-1">
+        <img src="assets/images/collection/col-01.png" alt="Untitled I" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">Untitled I</span>
+          <span class="collection-item__sub">2024</span>
+        </div>
+      </div>
+
+      <div class="collection-item reveal reveal-delay-2">
+        <img src="assets/images/collection/col-07.png" alt="Untitled VII" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">Untitled VII</span>
+          <span class="collection-item__sub">2024</span>
+        </div>
+      </div>
+
+      <div class="collection-item reveal">
+        <img src="assets/images/collection/col-06.png" alt="Untitled VI" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">Untitled VI</span>
+          <span class="collection-item__sub">2024</span>
+        </div>
+      </div>
+
+      <div class="collection-item reveal reveal-delay-1">
+        <img src="assets/images/collection/col-10.png" alt="Untitled X" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">Untitled X</span>
+          <span class="collection-item__sub">2024</span>
+        </div>
+      </div>
+
+      <div class="collection-item reveal reveal-delay-2">
+        <img src="assets/images/collection/artwork-03-sculpture.png" alt="Sculpture Study" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">Sculpture Study</span>
+          <span class="collection-item__sub">Cast bronze, 2022</span>
+        </div>
+      </div>
+
+      <div class="collection-item reveal">
+        <img src="assets/images/collection/col-02.png" alt="Untitled II" />
+        <div class="collection-item__reveal">
+          <span class="collection-item__title">Untitled II</span>
+          <span class="collection-item__sub">2024</span>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand-col">
+        <a class="footer__brand-logo" href="index.html">
+          <img src="assets/logo/mainlogo.svg" alt="Collection Akhavan" />
+        </a>
+      </div>
+      <div>
+        <p class="footer__col-title">Pages</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="exhibitions.html">Exhibitions</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Legal</p>
+        <ul class="footer__links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="imprint.html">Imprint</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact-col">
+        <p class="footer__col-title">Visit</p>
+        <a href="location.html" class="footer__address">Mittersteig 15<br>1040 Wien, Austria</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2026 Akhavan Collection — All rights reserved.</span>
+      <div class="footer__legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="imprint.html">Imprint</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/feedback.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Akhavan Collection</title>
+  <link rel="icon" href="assets/favicon/white.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="assets/favicon/black.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header solid" id="header">
+    <div class="header__left">
+      <button class="hamburger" id="menuOpen" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <a class="header__logo" href="index.html" aria-label="Collection Akhavan">
+      <img src="assets/logo/wordmark.svg" alt="Collection Akhavan" />
+    </a>
+    <div class="header__right">
+      <div class="lang-toggle">
+        <button data-lang="de">DE</button>
+        <span class="sep">/</span>
+        <button data-lang="en" class="active">EN</button>
+      </div>
+      <div class="mode-wrap">
+        <span class="mode-icon" id="modeIcon"></span>
+        <button class="mode-capsule" id="modeCapsule" aria-label="Toggle day / night mode"></button>
+      </div>
+      <button class="nav-reserve" data-reserve>Reserve a Visit</button>
+    </div>
+  </header>
+
+  <!-- ===== SIDE MENU ===== -->
+  <nav class="menu-panel" id="menuPanel">
+    <div class="menu-panel__head">
+      <a class="menu-panel__logo" href="index.html">
+        <img src="assets/logo/wordmark.svg" alt="Collection Akhavan" />
+      </a>
+      <button class="icon-btn" id="menuClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="20" height="20"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <nav class="menu-nav">
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="location.html">Location</a>
+      <a href="about.html">About Us</a>
+    </nav>
+    <div class="menu-panel__foot">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="imprint.html">Imprint</a>
+    </div>
+  </nav>
+
+  <!-- ===== RESERVE PANEL ===== -->
+  <aside class="reserve-panel" id="reservePanel">
+    <div class="reserve-panel__head">
+      <span class="reserve-panel__title">Reserve a Visit</span>
+      <button class="icon-btn" id="reserveClose" aria-label="Close panel">
+        <svg viewBox="0 0 24 24" width="20" height="20"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <div class="reserve-panel__body">
+      <p class="reserve-panel__intro">Visits to Collection Akhavan are by appointment. Select a date and time below — we look forward to welcoming you.</p>
+      <div class="calendly-wrap">
+        <div class="cly-dark calendly-inline-widget" data-url="https://calendly.com/designography96/visit-akhavan-collection?background_color=050200&text_color=f4f4f4&primary_color=fe751f" style="min-width:320px;height:700px;"></div>
+        <div class="cly-light calendly-inline-widget" data-url="https://calendly.com/designography96/visit-akhavan-collection?background_color=f4f4f4&text_color=050200&primary_color=050200" style="min-width:320px;height:700px;"></div>
+      </div>
+    </div>
+  </aside>
+
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- Cover image -->
+    <section class="about-cover">
+      <img src="assets/images/about/about-cover.jpg" alt="Collection Akhavan space" />
+      <div class="about-cover__grad"></div>
+    </section>
+
+    <!-- Body text -->
+    <div class="about-body">
+      <p class="about-body__label">Our Story</p>
+
+      <h2 class="about-body__heading">
+        A space built for the singular encounter between a person and a work of art.
+      </h2>
+
+      <div class="about-body__divider"></div>
+
+      <p>Collection Akhavan was founded on a simple conviction: that art deserves unhurried attention. Situated in a former theatrical space in Vienna's 4th district, the venue was conceived as an antidote to the crowded museum — a place where a small number of carefully selected works can be seen without distraction, in conditions that honour the act of looking.</p>
+
+      <p>The collection spans contemporary painting, photography, and sculptural practice, with a particular focus on works that engage silence, material weight, and the charged quality of interior space. Rather than pursuing a comprehensive survey, the collection builds slowly around sustained relationships with a small number of artists whose practices share a common sensibility. Acquisitions are rare and considered — each work is chosen not only for what it is, but for what it asks of the room it enters.</p>
+
+      <p>Exhibitions rotate twice yearly. Between cycles, the permanent collection remains on view by appointment. The venue is also made available for private events, cultural programming, and institutional collaborations that align with the spirit of the space. These partnerships are approached with the same care as the collection itself — never incidental, always in service of the work.</p>
+
+      <p>Visits are always by appointment. We believe this is part of the experience — arriving not by chance but by intention. There is something in the act of arranging a visit, of marking time deliberately for the purpose of looking, that already begins to shift one's attention. The space rewards that preparation.</p>
+
+      <p>The architecture of the building carries its own history. Its past as a theatrical venue is not erased but absorbed — in the proportions of the rooms, in the quality of the light, in the way sound behaves within the walls. Works are placed in dialogue with this inherited geometry rather than against it. The result is a setting that feels neither neutral nor imposing, but attentive — as though the building itself has learned, over time, how to hold things carefully.</p>
+
+      <p>Collecting here has never been about accumulation. It is closer to editing — a continuous process of discernment that asks what belongs, what endures, and what continues to generate meaning after the initial encounter has passed. The works that remain in the collection are those that have proven themselves in time: pieces that change with the light, that reveal new details across repeated viewings, that resist easy resolution.</p>
+
+      <p>We think of the collection not as a fixed body of work but as an ongoing argument about what attention is for. It will continue to evolve — not rapidly, and not by following external trends, but through the same slow, deliberate process that has shaped it from the beginning.</p>
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand-col">
+        <a class="footer__brand-logo" href="index.html">
+          <img src="assets/logo/mainlogo.svg" alt="Collection Akhavan" />
+        </a>
+      </div>
+      <div>
+        <p class="footer__col-title">Pages</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="exhibitions.html">Exhibitions</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Legal</p>
+        <ul class="footer__links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="imprint.html">Imprint</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact-col">
+        <p class="footer__col-title">Visit</p>
+        <a href="location.html" class="footer__address">Mittersteig 15<br>1040 Wien, Austria</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2026 Akhavan Collection — All rights reserved.</span>
+      <div class="footer__legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="imprint.html">Imprint</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/feedback.js"></script>
+</body>
+</html>
