@@ -456,7 +456,7 @@ body.light .header.solid .mode-capsule::after { background: var(--obsidian); tra
   margin-bottom: 48px;
 }
 .menu-panel__logo img {
-  height: 26px;
+  height: 44px;
   width: auto;
   filter: brightness(0) invert(1);
   transition: filter .35s;
@@ -637,7 +637,7 @@ body.light .hero__tint { background: rgba(5, 2, 0, .22); }
 }
 .hero__tagline {
   display: block;
-  font-size: 17px;
+  font-size: 21px;
   font-weight: 500;
   color: var(--porcelain);
   line-height: 1.65;
@@ -1000,19 +1000,17 @@ body.light .art-ph {
   line-height: 1.2;
 }
 
-/* Exhibition rows */
+/* Exhibition rows — full-bleed, image covers 50vw */
 .exhb-rows {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 88px 40px 100px;
+  padding: 88px 0 100px;
 }
 
 .exhb-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
-  align-items: center;
-  margin-bottom: 110px;
+  grid-template-columns: 50% 50%;
+  gap: 0;
+  align-items: stretch;
+  margin-bottom: 8px;
 }
 .exhb-row:last-child { margin-bottom: 0; }
 
@@ -1020,13 +1018,21 @@ body.light .art-ph {
 .exhb-row--rev .exhb-img { order: 2; }
 .exhb-row--rev .exhb-info { order: 1; }
 
-/* Exhibition image */
+/* Exhibition image — full bleed to viewport edge */
 .exhb-img {
   position: relative;
-  border-radius: var(--radius-img);
   overflow: hidden;
-  aspect-ratio: 3/4;
+  min-height: 640px;
   cursor: pointer;
+  border-radius: 0;
+}
+/* Ex I (image left) — round right corners only */
+.exhb-row:not(.exhb-row--rev) .exhb-img {
+  border-radius: 0 var(--radius-img) var(--radius-img) 0;
+}
+/* Ex II (image right) — round left corners only */
+.exhb-row--rev .exhb-img {
+  border-radius: var(--radius-img) 0 0 var(--radius-img);
 }
 .exhb-img img,
 .exhb-img .art-ph {
@@ -1062,7 +1068,7 @@ body.light .art-ph {
 }
 
 /* Exhibition info */
-.exhb-info { padding: 8px 0; }
+.exhb-info { padding: 64px 80px; }
 
 .exhb-info__num {
   font-size: 10px;
@@ -1162,16 +1168,16 @@ body.light .art-ph {
 
 .location-main {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 64px;
-  margin-bottom: 80px;
-  align-items: start;
+  grid-template-columns: 55% 1fr;
+  gap: 0;
+  align-items: stretch;
+  margin: 60px 0 0;
 }
 
 .location-map-box {
-  border-radius: var(--radius-img);
+  border-radius: 0 var(--radius-img) var(--radius-img) 0;
   overflow: hidden;
-  aspect-ratio: 4/3;
+  min-height: 560px;
   background: var(--border);
 }
 .location-map-box iframe {
@@ -1185,7 +1191,7 @@ body.light .art-ph {
 body.light .location-map-box iframe { filter: grayscale(.4); }
 .location-map-box:hover iframe { filter: grayscale(0); }
 
-.location-info { padding-top: 8px; }
+.location-info { padding: 60px 64px 60px 72px; }
 .location-info__label {
   font-size: 10px;
   font-weight: 600;
@@ -1260,12 +1266,60 @@ body.light .location-map-box iframe { filter: grayscale(.4); }
 }
 .location-photo-slide:hover img { transform: scale(1.04); }
 
+/* Location 9-photo grid */
+.loc-photo-grid {
+  margin-top: 60px;
+}
+
 /* Venue rental form */
 .venue-rental {
   max-width: 660px;
   margin: 0 auto;
   padding-top: 80px;
   border-top: 1px solid var(--border);
+}
+
+/* Rent Venue page cover (reuses loc-cover structure) */
+.rent-cover {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+  min-height: 260px;
+  border-radius: 0 0 var(--radius-img) var(--radius-img);
+}
+.rent-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transform: scale(1.08);
+}
+.rent-cover__caption {
+  position: absolute;
+  inset: 0;
+  padding-top: var(--nav-h);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5,2,0,.42);
+  text-align: center;
+}
+.rent-cover__label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244,244,244,.75);
+  margin-bottom: 12px;
+}
+.rent-cover__title {
+  font-size: 38px;
+  font-weight: 500;
+  color: var(--porcelain);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 .venue-rental__title {
   font-size: 38px;
@@ -1425,6 +1479,7 @@ body.light .form__submit .btn--ghost:hover {
   line-height: 1.9;
   color: var(--fg-dim);
   margin-bottom: 22px;
+  text-align: justify;
 }
 .about-body p:last-child { margin-bottom: 0; }
 
@@ -1465,6 +1520,17 @@ body.light .form__submit .btn--ghost:hover {
   height: 200px;
   object-fit: cover;
   object-position: center 30%;
+}
+/* Moved card — natural portrait height + 50px taller */
+#exhibitionGrid .collection-item--taller {
+  min-height: 685px;
+  overflow: hidden;
+}
+#exhibitionGrid .collection-item--taller img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /* ============================================================

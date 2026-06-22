@@ -267,10 +267,10 @@
       if (id === '1') {
         /* Col 1: items 0-3, then item 10 moved here (~400px tall), item 4 removed */
         c1.innerHTML = mkItem(n(0)) + mkItem(n(1)) + mkItem(n(2)) + mkItem(n(3)) + mkItem(n(10), 'collection-item--tall');
-        /* Col 2: items 5-9 (item 10 moved away) */
-        c2.innerHTML = mkItem(n(5)) + mkItem(n(6)) + mkItem(n(7)) + mkItem(n(8)) + mkItem(n(9));
-        /* Col 3: items 11-15, all at full natural height */
-        c3.innerHTML = mkItem(n(11)) + mkItem(n(12)) + mkItem(n(13)) + mkItem(n(14)) + mkItem(n(15));
+        /* Col 2: items 5-8 (n(9) moved to col 3) */
+        c2.innerHTML = mkItem(n(5)) + mkItem(n(6)) + mkItem(n(7)) + mkItem(n(8));
+        /* Col 3: items 11-13, then n(9) moved here taller (+50px); n(14) & n(15) removed */
+        c3.innerHTML = mkItem(n(11)) + mkItem(n(12)) + mkItem(n(13)) + mkItem(n(9), 'collection-item--taller');
       } else if (id === '2') {
         /* Col 1: items 0-4 normal */
         c1.innerHTML = mkItem(n(0)) + mkItem(n(1)) + mkItem(n(2)) + mkItem(n(3)) + mkItem(n(4));
