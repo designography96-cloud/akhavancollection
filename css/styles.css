@@ -570,6 +570,10 @@ body.light .menu-panel__logo img { filter: brightness(0); }
   width: 100% !important;
   height: 100% !important;
 }
+/* Dual Cal.com embeds — one per mode */
+.cal-light { display: none; }
+body.light .cal-dark  { display: none; }
+body.light .cal-light { display: block; }
 
 /* ============================================================
    OVERLAY
