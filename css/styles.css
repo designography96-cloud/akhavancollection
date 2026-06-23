@@ -1016,7 +1016,8 @@ body.light .art-ph {
 .exhb-img {
   position: relative;
   overflow: hidden;
-  min-height: 94vh;
+  height: 94vh;
+  min-height: 420px;
   cursor: pointer;
   border-radius: 0;
   transform: translateZ(0);
