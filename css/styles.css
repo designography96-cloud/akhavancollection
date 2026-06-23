@@ -1120,14 +1120,15 @@ body.light .art-ph {
 /* ============================================================
    LOCATION PAGE
    ============================================================ */
-/* Location cover */
+/* Location cover — 40vh of the 100vh first-screen */
 .loc-cover {
   position: relative;
   width: 100%;
   height: 40vh;
+  min-height: 220px;
   overflow: hidden;
-  min-height: 260px;
   border-radius: 0 0 var(--radius-img) var(--radius-img);
+  flex-shrink: 0;
 }
 .loc-cover img {
   width: 100%;
@@ -1174,13 +1175,14 @@ body.light .art-ph {
   gap: 0;
   align-items: stretch;
   margin: 5px 0 0;
+  height: calc(60vh - 5px);
+  min-height: 380px;
 }
 
 .location-map-box {
   position: relative;
   border-radius: 0 var(--radius-img) var(--radius-img) 0;
   overflow: hidden;
-  min-height: 560px;
   background: var(--border);
 }
 .location-map-box iframe {
@@ -1413,21 +1415,25 @@ body.light .form__textarea:focus {
 .form__textarea { min-height: 130px; resize: vertical; line-height: 1.65; }
 .form__submit { align-self: flex-start; margin-top: 8px; }
 
-/* Date input — dark calendar picker in night mode */
+/* Date input — dark picker in night mode, no blue accent */
 input[type="date"].form__input {
   color-scheme: dark;
+  accent-color: #f4f4f4;
 }
 body.light input[type="date"].form__input {
   color-scheme: light;
+  accent-color: #050200;
 }
 input[type="date"].form__input::-webkit-calendar-picker-indicator {
-  filter: invert(1) brightness(0.8);
+  filter: brightness(0) invert(1);
   cursor: pointer;
-  opacity: 0.7;
+  opacity: 0.85;
+  padding: 2px;
+  border-radius: 3px;
 }
 body.light input[type="date"].form__input::-webkit-calendar-picker-indicator {
-  filter: none;
-  opacity: 0.6;
+  filter: brightness(0);
+  opacity: 0.55;
 }
 
 /* View Exhibition button — white fill + glow on hover */
