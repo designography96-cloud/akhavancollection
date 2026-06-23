@@ -560,22 +560,16 @@ body.light .menu-panel__logo img { filter: brightness(0); }
   line-height: 1.65;
 }
 
-.calendly-wrap {
-  border-radius: 0;
-  overflow: visible;
-  background: transparent;
+.cal-wrap {
   flex: 1;
   margin: 0 -28px;
-}
-.calendly-wrap .calendly-inline-widget {
-  min-width: 100% !important;
-  width: 100% !important;
   height: 680px;
+  overflow: hidden;
 }
-/* Dual Calendly widgets — one per mode */
-.cly-light { display: none; }
-body.light .cly-dark  { display: none; }
-body.light .cly-light { display: block; }
+.cal-wrap > div {
+  width: 100% !important;
+  height: 100% !important;
+}
 
 /* ============================================================
    OVERLAY
