@@ -6,7 +6,7 @@
   <title>Privacy Policy — Akhavan Collection</title>
   <link rel="icon" href="assets/favicon/white.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
   <link rel="icon" href="assets/favicon/black.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css?v=11" />
 </head>
 <body>
 
@@ -18,7 +18,9 @@
       </button>
     </div>
     <a class="header__logo" href="index.html" aria-label="Collection Akhavan">
-      <img src="assets/logo/wordmark.svg" alt="Collection Akhavan" />
+      <img class="logo--wordmark" src="assets/logo/wordmark.svg" alt="Collection Akhavan" />
+      <img class="logo--icon logo--icon-dark" src="assets/icons/Artboard 17.svg" alt="Collection Akhavan" />
+      <img class="logo--icon logo--icon-light" src="assets/icons/Artboard 17 copy.svg" alt="Collection Akhavan" />
     </a>
     <div class="header__right">
       <div class="mode-wrap">
@@ -53,6 +55,11 @@
       <a href="about.html">About Us</a>
     </nav>
     <div class="menu-panel__foot">
+      <div class="menu-lang-toggle">
+        <button data-lang="de">DE</button>
+        <span class="sep">/</span>
+        <button data-lang="en" class="active">EN</button>
+      </div>
       <a href="privacy.html">Privacy Policy</a>
       <a href="imprint.html">Imprint</a>
     </div>
@@ -145,7 +152,8 @@
     <div class="footer__top">
       <div class="footer__brand-col">
         <a class="footer__brand-logo" href="index.html">
-          <img src="assets/logo/mainlogo.svg" alt="Collection Akhavan" />
+          <img class="logo--main" src="assets/logo/mainlogo.svg" alt="Collection Akhavan" />
+          <img class="logo--wordmark-footer" src="assets/logo/wordmark.svg" alt="Collection Akhavan" />
         </a>
       </div>
       <div>
@@ -194,7 +202,7 @@
     config: {"layout":"month_view","theme":"dark","useSlotsViewOnSmallScreen":"true"},
     calLink: "designography-support-48tu6f/visit-akhavan-collection",
   });
-  Cal.ns["cal-dark"]("ui", {"theme":"dark","cssVarsPerTheme":{"dark":{"cal-brand":"#f4f4f4","cal-brand-emphasis":"#ffffff","cal-text":"#f4f4f4","cal-bg":"#050200","cal-bg-emphasis":"#0f0c09","cal-border":"rgba(244,244,244,0.1)"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  Cal.ns["cal-dark"]("ui", {"theme":"dark","cssVarsPerTheme":{"dark":{"cal-brand":"#f4f4f4","cal-brand-emphasis":"#ffffff","cal-text":"#f4f4f4","cal-bg":"#050200","cal-bg-emphasis":"#050200","cal-border":"rgba(244,244,244,0.1)"}},"hideEventTypeDetails":false,"layout":"month_view"});
 
   /* Day mode embed */
   Cal("init", "cal-light", {origin:"https://app.cal.com"});
@@ -205,5 +213,6 @@
   });
   Cal.ns["cal-light"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#050200","cal-brand-emphasis":"#000000","cal-text":"#050200","cal-bg":"#f4f4f4","cal-bg-emphasis":"#e8e8e8","cal-border":"rgba(5,2,0,0.1)"}},"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
+  <button class="reserve-float" data-reserve aria-label="Reserve a Visit">Reserve a Visit</button>
 </body>
 </html>

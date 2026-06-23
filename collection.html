@@ -6,7 +6,7 @@
   <title>Collection — Akhavan Collection</title>
   <link rel="icon" href="assets/favicon/white.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
   <link rel="icon" href="assets/favicon/black.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css?v=11" />
 </head>
 <body>
 
@@ -18,7 +18,9 @@
       </button>
     </div>
     <a class="header__logo" href="index.html" aria-label="Collection Akhavan">
-      <img src="assets/logo/wordmark.svg" alt="Collection Akhavan" />
+      <img class="logo--wordmark" src="assets/logo/wordmark.svg" alt="Collection Akhavan" />
+      <img class="logo--icon logo--icon-dark" src="assets/icons/Artboard 17.svg" alt="Collection Akhavan" />
+      <img class="logo--icon logo--icon-light" src="assets/icons/Artboard 17 copy.svg" alt="Collection Akhavan" />
     </a>
     <div class="header__right">
       <div class="mode-wrap">
@@ -53,6 +55,11 @@
       <a href="about.html">About Us</a>
     </nav>
     <div class="menu-panel__foot">
+      <div class="menu-lang-toggle">
+        <button data-lang="de">DE</button>
+        <span class="sep">/</span>
+        <button data-lang="en" class="active">EN</button>
+      </div>
       <a href="privacy.html">Privacy Policy</a>
       <a href="imprint.html">Imprint</a>
     </div>
@@ -91,109 +98,108 @@
       </div>
     </section>
 
-    <section class="collection-grid">
+    <section class="collection-grid" id="collectionGrid">
 
-      <div class="collection-item reveal">
-        <img src="assets/images/collection/artwork-01-street-scene.png" alt="Street Scene" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">Street Scene</span>
-          <span class="collection-item__sub">Mixed media, 2024</span>
+      <!-- Column 1: 5 items — sets the natural grid height -->
+      <div class="exhb-col">
+        <div class="collection-item reveal">
+          <img src="assets/images/collection/artwork-01-street-scene.png" alt="Street Scene" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">Street Scene</span>
+            <span class="collection-item__sub">Mixed media, 2024</span>
+          </div>
+        </div>
+        <div class="collection-item reveal reveal-delay-1">
+          <img src="assets/images/collection/col-09.png" alt="Untitled IX" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">Untitled IX</span>
+            <span class="collection-item__sub">2024</span>
+          </div>
+        </div>
+        <div class="collection-item reveal reveal-delay-2">
+          <img src="assets/images/collection/col-04.png" alt="Untitled IV" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">Untitled IV</span>
+            <span class="collection-item__sub">2024</span>
+          </div>
+        </div>
+        <div class="collection-item reveal">
+          <img src="assets/images/collection/col-03.png" alt="Untitled III" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">Untitled III</span>
+            <span class="collection-item__sub">2024</span>
+          </div>
+        </div>
+        <div class="collection-item collection-item--fill reveal reveal-delay-1">
+          <img src="assets/images/collection/artwork-02-valie-export.png" alt="VALIE EXPORT" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">VALIE EXPORT</span>
+            <span class="collection-item__sub">Photography, 2023</span>
+          </div>
         </div>
       </div>
 
-      <div class="collection-item reveal reveal-delay-1">
-        <img src="assets/images/collection/col-09.png" alt="Untitled IX" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">Untitled IX</span>
-          <span class="collection-item__sub">2024</span>
+      <!-- Column 2: 4 items — last stretches to align bottom -->
+      <div class="exhb-col">
+        <div class="collection-item reveal reveal-delay-2">
+          <img src="assets/images/collection/col-05.png" alt="Untitled V" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">Untitled V</span>
+            <span class="collection-item__sub">2024</span>
+          </div>
+        </div>
+        <div class="collection-item reveal">
+          <img src="assets/images/collection/col-08.png" alt="Untitled VIII" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">Untitled VIII</span>
+            <span class="collection-item__sub">2024</span>
+          </div>
+        </div>
+        <div class="collection-item reveal reveal-delay-1">
+          <img src="assets/images/collection/col-01.png" alt="Untitled I" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">Untitled I</span>
+            <span class="collection-item__sub">2024</span>
+          </div>
+        </div>
+        <div class="collection-item collection-item--fill reveal reveal-delay-2">
+          <img src="assets/images/collection/col-07.png" alt="Untitled VII" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">Untitled VII</span>
+            <span class="collection-item__sub">2024</span>
+          </div>
         </div>
       </div>
 
-      <div class="collection-item reveal reveal-delay-2">
-        <img src="assets/images/collection/col-04.png" alt="Untitled IV" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">Untitled IV</span>
-          <span class="collection-item__sub">2024</span>
+      <!-- Column 3: 4 items — last stretches to align bottom -->
+      <div class="exhb-col">
+        <div class="collection-item reveal">
+          <img src="assets/images/collection/col-06.png" alt="Untitled VI" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">Untitled VI</span>
+            <span class="collection-item__sub">2024</span>
+          </div>
         </div>
-      </div>
-
-      <div class="collection-item reveal">
-        <img src="assets/images/collection/col-03.png" alt="Untitled III" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">Untitled III</span>
-          <span class="collection-item__sub">2024</span>
+        <div class="collection-item reveal reveal-delay-1">
+          <img src="assets/images/collection/col-10.png" alt="Untitled X" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">Untitled X</span>
+            <span class="collection-item__sub">2024</span>
+          </div>
         </div>
-      </div>
-
-      <div class="collection-item reveal reveal-delay-1">
-        <img src="assets/images/collection/artwork-02-valie-export.png" alt="VALIE EXPORT" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">VALIE EXPORT</span>
-          <span class="collection-item__sub">Photography, 2023</span>
+        <div class="collection-item reveal reveal-delay-2">
+          <img src="assets/images/collection/artwork-03-sculpture.png" alt="Sculpture Study" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">Sculpture Study</span>
+            <span class="collection-item__sub">Cast bronze, 2022</span>
+          </div>
         </div>
-      </div>
-
-      <div class="collection-item reveal reveal-delay-2">
-        <img src="assets/images/collection/col-05.png" alt="Untitled V" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">Untitled V</span>
-          <span class="collection-item__sub">2024</span>
-        </div>
-      </div>
-
-      <div class="collection-item reveal">
-        <img src="assets/images/collection/col-08.png" alt="Untitled VIII" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">Untitled VIII</span>
-          <span class="collection-item__sub">2024</span>
-        </div>
-      </div>
-
-      <div class="collection-item reveal reveal-delay-1">
-        <img src="assets/images/collection/col-01.png" alt="Untitled I" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">Untitled I</span>
-          <span class="collection-item__sub">2024</span>
-        </div>
-      </div>
-
-      <div class="collection-item reveal reveal-delay-2">
-        <img src="assets/images/collection/col-07.png" alt="Untitled VII" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">Untitled VII</span>
-          <span class="collection-item__sub">2024</span>
-        </div>
-      </div>
-
-      <div class="collection-item reveal">
-        <img src="assets/images/collection/col-06.png" alt="Untitled VI" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">Untitled VI</span>
-          <span class="collection-item__sub">2024</span>
-        </div>
-      </div>
-
-      <div class="collection-item reveal reveal-delay-1">
-        <img src="assets/images/collection/col-10.png" alt="Untitled X" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">Untitled X</span>
-          <span class="collection-item__sub">2024</span>
-        </div>
-      </div>
-
-      <div class="collection-item reveal reveal-delay-2">
-        <img src="assets/images/collection/artwork-03-sculpture.png" alt="Sculpture Study" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">Sculpture Study</span>
-          <span class="collection-item__sub">Cast bronze, 2022</span>
-        </div>
-      </div>
-
-      <div class="collection-item reveal">
-        <img src="assets/images/collection/col-02.png" alt="Untitled II" />
-        <div class="collection-item__reveal">
-          <span class="collection-item__title">Untitled II</span>
-          <span class="collection-item__sub">2024</span>
+        <div class="collection-item collection-item--fill reveal">
+          <img src="assets/images/collection/col-02.png" alt="Untitled II" />
+          <div class="collection-item__reveal">
+            <span class="collection-item__title">Untitled II</span>
+            <span class="collection-item__sub">2024</span>
+          </div>
         </div>
       </div>
 
@@ -206,7 +212,8 @@
     <div class="footer__top">
       <div class="footer__brand-col">
         <a class="footer__brand-logo" href="index.html">
-          <img src="assets/logo/mainlogo.svg" alt="Collection Akhavan" />
+          <img class="logo--main" src="assets/logo/mainlogo.svg" alt="Collection Akhavan" />
+          <img class="logo--wordmark-footer" src="assets/logo/wordmark.svg" alt="Collection Akhavan" />
         </a>
       </div>
       <div>
@@ -255,7 +262,7 @@
     config: {"layout":"month_view","theme":"dark","useSlotsViewOnSmallScreen":"true"},
     calLink: "designography-support-48tu6f/visit-akhavan-collection",
   });
-  Cal.ns["cal-dark"]("ui", {"theme":"dark","cssVarsPerTheme":{"dark":{"cal-brand":"#f4f4f4","cal-brand-emphasis":"#ffffff","cal-text":"#f4f4f4","cal-bg":"#050200","cal-bg-emphasis":"#0f0c09","cal-border":"rgba(244,244,244,0.1)"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  Cal.ns["cal-dark"]("ui", {"theme":"dark","cssVarsPerTheme":{"dark":{"cal-brand":"#f4f4f4","cal-brand-emphasis":"#ffffff","cal-text":"#f4f4f4","cal-bg":"#050200","cal-bg-emphasis":"#050200","cal-border":"rgba(244,244,244,0.1)"}},"hideEventTypeDetails":false,"layout":"month_view"});
 
   /* Day mode embed */
   Cal("init", "cal-light", {origin:"https://app.cal.com"});
@@ -266,5 +273,6 @@
   });
   Cal.ns["cal-light"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#050200","cal-brand-emphasis":"#000000","cal-text":"#050200","cal-bg":"#f4f4f4","cal-bg-emphasis":"#e8e8e8","cal-border":"rgba(5,2,0,0.1)"}},"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
+  <button class="reserve-float" data-reserve aria-label="Reserve a Visit">Reserve a Visit</button>
 </body>
 </html>

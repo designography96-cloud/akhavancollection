@@ -31,6 +31,32 @@
     modeCapsule.addEventListener('click', () => applyMode(!body.classList.contains('light')));
   }
 
+  /* ---- Footer drawers — always wired, CSS controls collapse on mobile ---- */
+  document.querySelectorAll('.footer__col-title').forEach(function(title) {
+    const parent = title.parentElement;
+    const content = parent.querySelector('.footer__links, .footer__address');
+    if (!content) return;
+    parent.classList.add('footer__drawer');
+    title.classList.add('footer__drawer-toggle');
+    title.addEventListener('click', function() {
+      const isOpen = parent.classList.contains('open');
+      if (isOpen) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        requestAnimationFrame(function() {
+          content.style.maxHeight = '0';
+        });
+        parent.classList.remove('open');
+      } else {
+        parent.classList.add('open');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.addEventListener('transitionend', function clear() {
+          if (parent.classList.contains('open')) content.style.maxHeight = 'none';
+          content.removeEventListener('transitionend', clear);
+        });
+      }
+    });
+  });
+
   /* ---- Language toggle ---- */
   document.querySelectorAll('[data-lang]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -90,12 +116,12 @@
   document.getElementById('menuOpen')?.addEventListener('click', () => openPanel(menuPanel));
   document.getElementById('menuClose')?.addEventListener('click', () => closePanel(menuPanel));
 
-  /* Reserve open — any element with data-reserve attribute */
-  document.querySelectorAll('[data-reserve]').forEach(el => {
-    el.addEventListener('click', () => {
+  /* Reserve open — delegated so it catches dynamically-added [data-reserve] elements */
+  document.addEventListener('click', e => {
+    if (e.target.closest('[data-reserve]')) {
       closePanel(menuPanel);
       openPanel(resPanel);
-    });
+    }
   });
 
   document.getElementById('reserveClose')?.addEventListener('click', () => closePanel(resPanel));
@@ -265,19 +291,19 @@
       const c3 = document.createElement('div'); c3.className = 'exhb-col';
 
       if (id === '1') {
-        /* Col 1: items 0-3, then item 10 moved here (~400px tall), item 4 removed */
-        c1.innerHTML = mkItem(n(0)) + mkItem(n(1)) + mkItem(n(2)) + mkItem(n(3)) + mkItem(n(10), 'collection-item--tall');
-        /* Col 2: items 5-8 (n(9) moved to col 3) */
-        c2.innerHTML = mkItem(n(5)) + mkItem(n(6)) + mkItem(n(7)) + mkItem(n(8));
-        /* Col 3: items 11-13, then n(9) moved here taller (+50px); n(14) & n(15) removed */
-        c3.innerHTML = mkItem(n(11)) + mkItem(n(12)) + mkItem(n(13)) + mkItem(n(9), 'collection-item--taller');
+        /* Col 1: 5 items, last stretches to align bottom */
+        c1.innerHTML = mkItem(n(0)) + mkItem(n(1)) + mkItem(n(2)) + mkItem(n(3)) + mkItem(n(4), 'collection-item--fill');
+        /* Col 2: +1 fixed-height accent, last fill stretches less */
+        c2.innerHTML = mkItem(n(5)) + mkItem(n(6)) + mkItem(n(7)) + mkItem(n(8)) + mkItem(n(10), 'collection-item--small') + mkItem(n(9), 'collection-item--fill');
+        /* Col 3: +1 fixed-height accent, last fill stretches less */
+        c3.innerHTML = mkItem(n(11)) + mkItem(n(12)) + mkItem(n(13)) + mkItem(n(15), 'collection-item--small') + mkItem(n(14), 'collection-item--fill');
       } else if (id === '2') {
         /* Col 1: items 0-4 normal */
         c1.innerHTML = mkItem(n(0)) + mkItem(n(1)) + mkItem(n(2)) + mkItem(n(3)) + mkItem(n(4));
-        /* Col 2: items 5-6, then swapped (use col3's first image n(11)) at position 3, then 8-10(small) */
-        c2.innerHTML = mkItem(n(5)) + mkItem(n(6)) + mkItem(n(11)) + mkItem(n(8)) + mkItem(n(9)) + mkItem(n(10), 'collection-item--small');
-        /* Col 3: swapped first (use col2's 3rd image n(7)), then items 12-15(small) */
-        c3.innerHTML = mkItem(n(7)) + mkItem(n(12)) + mkItem(n(13)) + mkItem(n(14)) + mkItem(n(15), 'collection-item--small');
+        /* Col 2: items 5-6, n(11), 8-9 (n(10)small removed from bottom) */
+        c2.innerHTML = mkItem(n(5)) + mkItem(n(6)) + mkItem(n(11)) + mkItem(n(8)) + mkItem(n(9));
+        /* Col 3: n(7), 12-13, n(15)small (n(14) removed — 2nd from bottom) */
+        c3.innerHTML = mkItem(n(7)) + mkItem(n(12)) + mkItem(n(13)) + mkItem(n(15), 'collection-item--small');
       }
 
       grid.appendChild(c1);
