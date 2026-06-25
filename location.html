@@ -6,7 +6,7 @@
   <title>Location — Akhavan Collection</title>
   <link rel="icon" href="assets/favicon/white.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
   <link rel="icon" href="assets/favicon/black.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
-  <link rel="stylesheet" href="css/styles.css?v=11" />
+  <link rel="stylesheet" href="css/styles.css?v=12" />
 </head>
 <body>
 
@@ -110,32 +110,39 @@
       </div>
 
       <div class="location-info">
-        <p class="location-info__label">Find Us</p>
-        <div class="location-info__cols">
-          <p class="location-info__address">
-            Mittersteig 15<br>
-            1040 Wien<br>
-            Austria
-          </p>
-          <div>
-            <p class="location-info__hours-label">Opening Hours</p>
-            <div class="location-info__hours">
-              <p>Tuesday — Friday &nbsp; 11:00 – 18:00</p>
-              <p>Saturday &nbsp; 11:00 – 16:00</p>
-              <p>Sunday &amp; Monday &nbsp; Closed</p>
-              <p style="margin-top:10px;font-size:12px">Visits by appointment only.<br>Please reserve your time in advance.</p>
+        <div class="location-info__split">
+
+          <div class="location-info__col">
+            <p class="location-info__label">Address</p>
+            <p class="location-info__address">
+              Mittersteig 15<br>
+              1040 Wien<br>
+              Austria
+            </p>
+            <div class="location-info__dir">
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Mittersteig+15,+1040+Wien,+Austria"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--ghost"
+              >
+                Get Directions &rarr;
+              </a>
             </div>
           </div>
-        </div>
-        <div class="location-info__dir">
-          <a
-            href="https://www.google.com/maps/dir/?api=1&destination=Mittersteig+15,+1040+Wien,+Austria"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn--ghost"
-          >
-            Get Directions &rarr;
-          </a>
+
+          <div class="location-info__vdivider"></div>
+
+          <div class="location-info__col">
+            <p class="location-info__label">Opening Hours</p>
+            <div class="location-info__hours">
+              <div class="location-info__hours-row"><span>Tue — Fri</span><span>11:00 – 18:00</span></div>
+              <div class="location-info__hours-row"><span>Saturday</span><span>11:00 – 16:00</span></div>
+              <div class="location-info__hours-row"><span>Sun &amp; Mon</span><span>Closed</span></div>
+            </div>
+            <p class="location-info__note">Visits by appointment only.<br>Please reserve your time in advance.</p>
+          </div>
+
         </div>
       </div>
 

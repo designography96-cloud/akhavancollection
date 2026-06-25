@@ -1170,7 +1170,7 @@ body.light .art-ph {
 
 .location-main {
   display: grid;
-  grid-template-columns: 55% 1fr;
+  grid-template-columns: 33.33% 1fr;
   gap: 0;
   align-items: stretch;
   margin: 5px 0 0;
@@ -1180,9 +1180,10 @@ body.light .art-ph {
 
 .location-map-box {
   position: relative;
-  border-radius: 0 var(--radius-img) var(--radius-img) 0;
+  border-radius: var(--radius-img);
   overflow: hidden;
   background: var(--border);
+  margin: 5px 0 5px 5px;
 }
 .location-map-box iframe {
   position: absolute;
@@ -1197,44 +1198,53 @@ body.light .art-ph {
 body.light .location-map-box iframe { filter: grayscale(.4); }
 .location-map-box:hover iframe { filter: grayscale(0); }
 
-.location-info { padding: 60px 64px 60px 72px; }
+.location-info {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.location-info__split {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  flex: 1;
+}
+.location-info__col {
+  padding: 48px 52px;
+}
+.location-info__vdivider {
+  background: var(--border);
+}
 .location-info__label {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--fg-dim);
   margin-bottom: 20px;
 }
-.location-info__cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: start;
-  margin-bottom: 36px;
-}
 .location-info__address {
-  font-size: 34px;
-  font-weight: 500;
-  line-height: 1.3;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.35;
   letter-spacing: -0.01em;
 }
-.location-info__dir {
-  margin-top: 4px;
-}
-.location-info__hours-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--fg-dim);
-  margin-bottom: 14px;
-}
-.location-info__hours p {
+.location-info__hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
+  color: var(--fg);
+  line-height: 2.2;
+}
+.location-info__note {
+  margin-top: 14px;
+  font-size: 12px;
   color: var(--fg-dim);
-  line-height: 1.7;
+  line-height: 1.75;
+}
+.location-info__dir {
+  margin-top: 32px;
 }
 
 
@@ -1492,10 +1502,43 @@ body.light .form__submit .btn--ghost:hover {
   background: rgba(5,2,0,.32);
 }
 
+/* About sticky split layout */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  padding: 5px;
+  align-items: start;
+  margin-top: 5px;
+}
+
+.about-split__img {
+  position: sticky;
+  top: calc(var(--nav-h) + 5px);
+  height: calc(100vh - var(--nav-h) - 10px);
+  border-radius: var(--radius-img);
+  overflow: hidden;
+}
+
+.about-split__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  transition: transform .65s var(--ease);
+}
+
 .about-body {
   max-width: 800px;
   margin: 88px auto;
   padding: 0 40px;
+}
+
+/* When about-body lives inside the split, override to fill the column */
+.about-split .about-body {
+  max-width: none;
+  margin: 0;
+  padding: 72px 64px 120px;
 }
 .about-body__label {
   font-size: 10px;
@@ -1840,7 +1883,7 @@ body.light .form__submit .btn--ghost:hover {
 
   .location-wrap { padding: calc(var(--nav-h) + 36px) 20px 72px; }
   .location-main { grid-template-columns: 1fr; gap: 40px; }
-  .location-info__address { font-size: 24px; }
+  .location-info__address { font-size: 26px; }
   .location-photos-strip { height: 48vh; }
 
   .venue-rental__title { font-size: 26px; }
@@ -1872,15 +1915,19 @@ body.light .form__submit .btn--ghost:hover {
   /* Location map — needs an explicit height when stacked to 1 column */
   .location-main { height: auto; min-height: unset; gap: 0; }
   .location-map-box { height: 260px; border-radius: var(--radius-img); }
-  .location-info { padding: 36px 24px; }
-  .location-info__cols { grid-template-columns: 1fr; gap: 16px; }
-  .location-info__address { font-size: 20px; }
+  .location-info__split { grid-template-columns: 1fr; }
+  .location-info__vdivider { display: none; }
+  .location-info__col { padding: 32px 24px 36px; }
+  .location-info__address { font-size: 24px; }
+  .location-info__dir { margin-top: 24px; }
 
   /* Location photo grid — 2 columns */
   .loc-photo-grid { grid-template-columns: repeat(2, 1fr); }
 
-  /* About */
-  .about-body { padding: 0 20px; }
+  /* About — collapse split to stacked */
+  .about-split { display: block; }
+  .about-split__img { position: static; height: 50vh; margin-bottom: 5px; border-radius: var(--radius-img); }
+  .about-split .about-body { max-width: 800px; margin: 56px auto; padding: 0 20px; }
 
   /* Exhibition rows — reduce image height and info padding when stacked */
   .exhb-img { height: 55vh; }
@@ -2014,6 +2061,7 @@ body.light .form__submit .btn--ghost:hover {
   .location-photos-strip { height: 44vh; }
   .location-photo-slide { height: 100%; }
   .about-cover__title { font-size: 30px; }
+  .about-split__img { height: 38vh; }
 
   /* Smaller cover titles on phones */
   .coll-cover__title,
